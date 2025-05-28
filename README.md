@@ -26,9 +26,11 @@ python -m unittest discover
 
 ## Code Coverage
 
-To measure the code coverage of your tests, follow these steps:
+Current test coverage is 96%.
 
-### Installing Coverage.py
+To measure and view the code coverage of your tests, follow these steps:
+
+### 1. Installing Coverage.py
 
 If you haven't already installed `coverage.py`, you can do so using pip:
 
@@ -36,37 +38,38 @@ If you haven't already installed `coverage.py`, you can do so using pip:
 pip install coverage
 ```
 
-### Running Coverage
+### 2. Running Tests with Coverage
 
-To run your tests with coverage, use the following command:
+To run your tests and collect coverage data, use the following command in the root directory of the project:
 
 ```bash
 coverage run -m unittest discover
 ```
+This command executes all tests (files named `test_*.py`) and records which lines of code are exercised.
 
-This command will execute all your tests and collect coverage data.
+### 3. Generating Coverage Reports
 
-### Generating Coverage Report
+After the tests have run, you can generate coverage reports in various formats:
 
-After running the tests, you can generate a coverage report in two formats:
+#### Terminal Report
 
-1. **Terminal Report:**
+For a quick summary in your terminal, run:
 
-   ```bash
-   coverage report
-   ```
+```bash
+coverage report
+```
+This will display a table with coverage percentages for each file.
 
-   This command will display a coverage report in the terminal.
+#### HTML Report
 
-2. **HTML Report:**
+For a more detailed, interactive report, generate an HTML version:
 
-   ```bash
-   coverage html
-   ```
-
-   This generates a more detailed HTML report in a directory named `htmlcov`. Open `htmlcov/index.html` in a web browser to view it.
+```bash
+coverage html
+```
+This command creates a directory named `htmlcov` (by default). Open the `htmlcov/index.html` file in a web browser to explore the coverage details, including which specific lines were covered or missed in each file.
 
 ### Viewing Coverage Report
 
-- For a quick overview, use the terminal report.
-- For a detailed view, including which lines are not covered by tests, use the HTML report.
+- The **terminal report** is useful for a quick overview of coverage percentages per file.
+- The **HTML report** provides an in-depth view, allowing you to navigate through your code and see exactly which lines are tested and which are not. This is highly recommended for identifying areas to improve test coverage.
